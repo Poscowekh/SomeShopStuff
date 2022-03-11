@@ -1,0 +1,13 @@
+﻿@using EasyShop.Controllers
+@model UserRegisterForm
+
+@{
+    ViewBag.Title = "Sign Up";
+    Layout = "_Layout";
+}
+
+@* <h2>Sign Up</h2> *@
+@Html.EditorForModel("Sign Up Form", Model)
+<h2>
+    @Html.ActionLink("Sign Up", nameof(HomeController.SignUpWithForm), Model)
+</h2>
