@@ -1,14 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EasyShop.Models;
 
-public class User : Person
+public enum LoyaltyStatus 
 {
-    public uint Id { set; get; }
+    NoLoyaltyProgramCard = 0,
+    HasLoyaltyProgramCard = 1,
+    HasPremiumLoyaltyProgramCard = 2
+}
 
-    [StringLength(32)] public string? NickName { set; get; } = null;
-    
+public class User : BasicPerson
+{
     public Cart? Cart { set; get; } = null;
     public List<Order>? Orders { set; get; } = null;
 
